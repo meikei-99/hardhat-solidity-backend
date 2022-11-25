@@ -61,13 +61,14 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
                 "jpg",
                 ""
             )
-            tokenUriMetadata.description = `${tokenUriMetadata.name} #1`
+            tokenUriMetadata.description = `${tokenUriMetadata.name} in the Wonderland`
             tokenUriMetadata.image = `ipfs://${imageUploadResponses[imageUploadResponsesIndex].IpfsHash}`
             const metadataUploadResponse = await storeTokenUriMetadata(
                 tokenUriMetadata
             )
             castleTokenURI.push(metadataUploadResponse.IpfsHash)
         }
+        log(`${tokenUriMetadata.image}`)
         log("Successfully upload metadata...")
         return castleTokenURI
     }

@@ -16,7 +16,6 @@ async function main() {
     console.log("Minting Nft...")
     const mintNftTx = await BasicNft.mintNFT() //
     console.log(`mintNftTx:${JSON.stringify(mintNftTx)}`)
-    console.log("Minted but getting transaction receipt...")
     const mintNftReceipt = await mintNftTx.wait(1) //
     const tokenId = mintNftReceipt.events[0].args.tokenId.toString()
     console.log(`Nft was minted with tokenId of ${tokenId}`)

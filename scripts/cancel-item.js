@@ -8,7 +8,10 @@ async function cancelItem() {
     console.log(nftMarketplace.address)
     console.log(basicNft.address)
     console.log("Cancelling item...")
-    const cancelItemTx = await nftMarketplace.cancelItem(nftAddress, tokenId)
+    const cancelItemTx = await nftMarketplace.cancelItem(
+        "0x5e4dcd908f4c157a18ccea7ab9dd11ef1aa5cafc",
+        0
+    )
     const cancelItemResponse = cancelItemTx.wait(1)
 
     console.log("NFT was cancelled!")
